@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider, useSelector } from 'react-redux';
+
 import './App.css';
+import Chat from './components/Chat';
+import store from './redux/chatStore';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<Provider store={store}>
+				<Chat />
+			</Provider>
+		</div>
+	);
 }
 
 export default App;
