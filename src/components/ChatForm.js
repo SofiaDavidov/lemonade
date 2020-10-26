@@ -35,6 +35,7 @@ const ChatForm = ({ isFormVisable }) => {
 	return (
 		<Form isFormVisable={isFormVisable} onSubmit={submitMsg}>
 			<ChatInput
+				// disabled='disabled'
 				value={userInput}
 				onChange={(event) => setUserInput(event.target.value)}
 				type='text'

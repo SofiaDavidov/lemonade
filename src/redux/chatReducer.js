@@ -26,7 +26,8 @@ const chatReducer = (state = initialState, action) => {
 				...state,
 				{
 					sender: 'maya',
-					bubbleTextType: 'last',
+					bubbleTextType:
+						state[state.length - 1].sender === 'maya' ? 'last' : 'single',
 					typing: action.payload ? false : true,
 					content: action.payload ? action.payload : null,
 				},
