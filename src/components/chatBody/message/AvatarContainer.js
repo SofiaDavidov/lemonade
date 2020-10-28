@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const AvatarContainer = styled.div`
 	align-items: center;
+	align-self: center;
 	display: flex;
 	flex-shrink: 0;
 	height: 75px;
@@ -19,9 +20,9 @@ const AvatarContainer = styled.div`
 		height: 65px;
 	}
 
-	@media only screen and (max-width: 600px) {
-		width: 60px;
-		height: 60px;
+	@media only screen and (max-width: 500px) {
+		width: 50px;
+		height: 50px;
 	}
 `;
 

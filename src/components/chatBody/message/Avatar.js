@@ -12,8 +12,8 @@ const Avatar = styled.img`
 		height: 50px;
 	}
 
-	@media only screen and (max-width: 600px) {
-		height: 45px;
+	@media only screen and (max-width: 500px) {
+		height: 40px;
 	}
 `;
 

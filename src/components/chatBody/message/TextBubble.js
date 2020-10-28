@@ -1,6 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 const TextBubble = styled.div`
+	animation: ${fadeIn} 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 	flex-shrink: 12;
 	padding: ${(props) => {
 		return '10px';
@@ -33,7 +43,6 @@ const TextBubble = styled.div`
 					border-radius: 5px 20px 20px 20px;
 					margin: 5px 5px 10px;
 			  `}
-	transition: ease all 1s;
 `;
 
 export default TextBubble;

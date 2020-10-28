@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../utils/devices'; //TODO
-import send from '../assets/submit_icon.png';
+import send from '../../assets/submit_icon.png';
 
 const SendButton = styled.button`
 	background: url(${send}) no-repeat scroll 0 0 transparent;
@@ -16,19 +15,7 @@ const SendButton = styled.button`
 
 	&:hover {
 		cursor: pointer;
-		animation: send 2s ease-in-out forwards;
-	}
-
-	@keyframes send {
-		0% {
-			opacity: 0.8;
-		}
-		50% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
+		transform: scale(1.2);
 	}
 
 	@media only screen and (max-width: 1200px) {
@@ -43,10 +30,10 @@ const SendButton = styled.button`
 		width: 30px;
 	}
 
-	@media only screen and (max-width: 600px) {
-		height: 25px;
+	@media only screen and (max-width: 500px) {
+		height: 20px;
 		margin: 2px;
-		width: 25px;
+		width: 20px;
 	}
 `;
 

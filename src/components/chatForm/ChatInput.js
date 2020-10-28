@@ -5,6 +5,7 @@ const ChatInput = styled.input`
 	border-radius: 7px;
 	height: 75%;
 	outline: none;
+	padding: 5px;
 	transition: ease all 0.5s;
 	width: 95%;
 
@@ -18,10 +19,12 @@ const ChatInput = styled.input`
 
 	@media only screen and (max-width: 900px) {
 		height: 60%;
+		width: 90%;
 	}
 
-	@media only screen and (max-width: 600px) {
-		height: 55%;
+	@media only screen and (max-width: 500px) {
+		height: 50%;
+		width: 90%;
 	}
 `;
 

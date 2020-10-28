@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Calculator } from 'antlr-calculator';
 
-import ChatForm from './ChatForm';
-import Conversation from './Conversation';
+import ChatForm from './chatForm/ChatForm';
+import Conversation from './chatBody/Conversation';
 import useLocalStorage from '../hooks/useLocalStorage';
-import useChatFlow from './useChatFlow';
+import useChatFlow from '../hooks/useChatFlow';
 
 const ChatContainer = styled.div`
 	background-color: #ffffff;
@@ -32,26 +32,28 @@ const Chat = () => {
 
 	useEffect(() => {
 		if (!storedUserName) {
-			introNoUserName();
-			setIsFormVisable(true);
+			introNoUserName().then(() => {
+				setIsFormVisable(true);
+				setIsFormDisabled(false);
+			});
 		} else {
-			introRecurringUser(storedUserName);
-			setIsFormVisable(true);
+			introRecurringUser(storedUserName).then(() => {
+				setIsFormVisable(true);
+				setIsFormDisabled(false);
+			});
 		}
 	}, []);
 
 	useEffect(() => {
+		//Handle any user input
 		const lastMsg = chatState[chatState.length - 1];
-		console.log(lastMsg);
-
 		if (lastMsg && lastMsg.sender === 'user') {
 			setIsFormDisabled(true);
-			console.log(lastMsg);
 			if (!userName && !storedUserName) {
 				setUserName(lastMsg.content);
 			} else {
 				const answer = Calculator.calculate(lastMsg.content);
-				sendResult(answer.result);
+				sendResult(answer.result).then(() => setIsFormDisabled(false));
 			}
 		}
 		return () => {};
@@ -60,7 +62,7 @@ const Chat = () => {
 	useEffect(() => {
 		if (userName !== null) {
 			setStoredUserName(userName);
-			newUser(userName);
+			newUser(userName).then(() => setIsFormDisabled(false));
 		}
 	}, [userName]);
 

@@ -1,5 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const typing = keyframes`
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.3;
+	}
+`;
 
 const Dot = styled.div`
 	height: 0.6rem;
@@ -9,19 +18,10 @@ const Dot = styled.div`
 	background-color: darkgray;
 	display: inline-block;
 	margin: 2px;
-	animation: typing 1.2s linear infinite alternate;
+	animation: ${typing} 1.2s linear infinite alternate;
 	animation-delay: ${(props) => {
 		return props.delay;
 	}};
-
-	@keyframes typing {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0.3;
-		}
-	}
 `;
 
 const Typing = () => (

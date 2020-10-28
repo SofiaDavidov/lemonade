@@ -6,13 +6,13 @@ import Avatar from './Avatar';
 import TextBubble from './TextBubble';
 import Typing from './Typing';
 
-import maya from '../assets/mayas_avatar.png';
-import user from '../assets/user_avatar.png';
+import maya from '../../../assets/mayas_avatar.png';
+import user from '../../../assets/user_avatar.png';
 
 const Row = styled.div`
 	display: flex;
-	font-size: 1.1rem;
-	transition: ease all 0.5s;
+	justify-self: flex-end;
+	transition: ease all 1s;
 
 	${(props) =>
 		props.sender === 'maya'
@@ -36,7 +36,7 @@ const Row = styled.div`
 				  `}
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 500px) {
 		${(props) =>
 			props.sender === 'maya'
 				? css`
