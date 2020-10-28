@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ChatInput = styled.input`
 	border: 2px solid rgb(210, 210, 210);
 	border-radius: 7px;
-	height: 75%;
+	height: 65%;
 	outline: none;
 	padding: 5px;
 	transition: ease all 0.5s;
@@ -14,11 +14,11 @@ const ChatInput = styled.input`
 	}
 
 	@media only screen and (max-width: 1200px) {
-		height: 65%;
+		height: 60%;
 	}
 
 	@media only screen and (max-width: 900px) {
-		height: 60%;
+		height: 55%;
 		width: 90%;
 	}
 
